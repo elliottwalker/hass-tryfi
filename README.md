@@ -1,4 +1,15 @@
 # TryFi for Home Assistant
+
+> **Fork notice** — this is a fork of
+> [sbabcock23/hass-tryfi](https://github.com/sbabcock23/hass-tryfi) that
+> requires a Sentry-free build of `pytryfi`
+> ([elliottwalker/pytryfi](https://github.com/elliottwalker/pytryfi), pinned by
+> commit SHA in the manifest). Upstream's `pytryfi` calls `sentry_sdk.init()`
+> with the library author's DSN, which ships error-level log records from the
+> entire Home Assistant instance to a third party. The fork also fixes the
+> deprecated `TrackerEntity` alias import and `battery_level` override
+> (removed in HA 2027.6/2027.7). No other functional changes; the `tryfi`
+> domain is unchanged, so entity history carries over.
 ![beta_badge](https://img.shields.io/badge/maturity-Beta-yellow.png?style=for-the-badge)
 [![](https://img.shields.io/github/release/sbabcock23/hass-tryfi/all.svg?style=for-the-badge)](https://github.com/sbabcock23/hass-tryfi/releases)
 ![release_date](https://img.shields.io/github/release-date/sbabcock23/hass-tryfi.svg?style=for-the-badge)

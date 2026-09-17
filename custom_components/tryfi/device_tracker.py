@@ -1,7 +1,6 @@
 import logging
 
-from homeassistant.components.device_tracker import SourceType
-from homeassistant.components.device_tracker.config_entry import TrackerEntity
+from homeassistant.components.device_tracker import SourceType, TrackerEntity
 from homeassistant.const import (
     PERCENTAGE,
     STATE_OK,
@@ -78,10 +77,6 @@ class TryFiPetTracker(CoordinatorEntity, TrackerEntity):
     def source_type(self):
         """Return the source type, eg gps or router, of the device."""
         return SourceType.GPS
-
-    @property
-    def battery_level(self):
-        return self.pet.device.batteryPercent
 
     @property
     def device_info(self):
